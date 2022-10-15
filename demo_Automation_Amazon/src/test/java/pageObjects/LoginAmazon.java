@@ -31,24 +31,24 @@ public class LoginAmazon {
 	@FindBy(xpath="//*[@id=\"s-refinements\"]/div[5]/ul/li[3]/span/a/div/label/i")
 	WebElement onePlus;
 
-	@FindBy(xpath="//*[@id=\"search\"]/div[1]/div[1]/div/span[3]/div[2]/div[3]/div/div/div/div/div[1]/span/a/div/img")
+	@FindBy(xpath="//*[@id=\"search\"]/div[1]/div[1]/div/span[3]/div[2]/div[3]/div/div/div/div/div[3]/div[1]/h2/a/span")
 	WebElement clickOnProduct;
 
 	@FindBy(xpath="//*[@id=\"add-to-cart-button\"]")
 	WebElement ProductDetails;
-	
+
 	@FindBy(xpath="//*[@id=\"add-to-cart-button\"]")
 	WebElement addToCart;
-	
+
 	@FindBy(xpath="//span[@id=\"attach-sidesheet-view-cart-button\"]")
 	WebElement addToCartButton;
-	
+
 	@FindBy(xpath="//input[@name=\"proceedToRetailCheckout\"]")
 	WebElement ProductAddToCart;
-	
+
 	@FindBy(xpath="//*[@id=\"attach-sidesheet-view-cart-button\"]/span/input")
 	WebElement cartIcon;
-	
+
 	@FindBy(xpath="//*[@id=\"sc-subtotal-label-activecart\"]")
 	WebElement productInCart;
 
@@ -120,7 +120,7 @@ public class LoginAmazon {
 		clickOnProduct.click();
 
 	}
-	
+
 	/**
 	 * This method is to verify product in cart
 	 * @return
@@ -134,9 +134,9 @@ public class LoginAmazon {
 	}
 
 	public void addToCart(){
-		
+
 		addToCart.click();
-		
+
 	}
 
 	public boolean ProductAddToCart() {
@@ -147,7 +147,7 @@ public class LoginAmazon {
 
 	public void cartIcon() {
 		cartIcon.click();
-		
+
 	}
 
 	public boolean productInCart() {
@@ -158,18 +158,18 @@ public class LoginAmazon {
 
 	public void cartButton() {
 		addToCartButton.click();
-		
+
 	}
 
 	public boolean buttonVisible() {
 		WebDriverWait wait = new WebDriverWait(Idriver, 30);
 		return wait.until(ExpectedConditions.visibilityOf(addToCartButton)).isDisplayed();
 	}
-	}
-		
-	
-		
-	
+}
+
+
+
+
 
 
 
