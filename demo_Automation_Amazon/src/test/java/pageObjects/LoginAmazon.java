@@ -3,8 +3,6 @@ package pageObjects;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.mail.Session;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -28,13 +26,13 @@ public class LoginAmazon {
 	@FindBy(xpath="//*[@href=\"/electronics/b/?ie=UTF8&node=976419031&ref_=nav_cs_electronics\"]")
 	WebElement Eletronics;
 
-	@FindBy(xpath="//*[@id=\"s-refinements\"]/div[5]/ul/li[3]/span/a/div/label/i")
+	@FindBy(xpath="//*[text()='OnePlus']")
 	WebElement onePlus;
 
-	@FindBy(xpath="//*[@id=\"search\"]/div[1]/div[1]/div/span[3]/div[2]/div[3]/div/div/div/div/div[3]/div[1]/h2/a/span")
+	@FindBy(xpath="//*[text()='OnePlus Nord CE 2 Lite 5G (Blue Tide, 6GB RAM, 128GB Storage)']")
 	WebElement clickOnProduct;
 
-	@FindBy(xpath="//*[@id=\"add-to-cart-button\"]")
+	@FindBy(xpath="//*[@id='add-to-cart-button']")
 	WebElement ProductDetails;
 
 	@FindBy(xpath="//*[@id=\"add-to-cart-button\"]")
@@ -105,14 +103,14 @@ public class LoginAmazon {
 		Thread.sleep(10000);
 		List<WebElement> resultsList =Idriver.findElements(By.xpath("//*[@class=\"a-size-base-plus a-color-base a-text-normal\"]"));
 		for (WebElement categoriesText : resultsList) {
-			System.out.println("Product categories names:"+categoriesText.getText());
+			System.out.println("Product categories names:"+categoriesText.getText());}
 
 			List<WebElement> priceList =Idriver.findElements(By.xpath("//*[@class=\"a-price-whole\"]"));
 			for (WebElement priceText : priceList) {
 				System.out.println("Product price list:"+priceText.getText());
 			}
 
-		}
+		
 
 	}
 
@@ -164,6 +162,23 @@ public class LoginAmazon {
 	public boolean buttonVisible() {
 		WebDriverWait wait = new WebDriverWait(Idriver, 30);
 		return wait.until(ExpectedConditions.visibilityOf(addToCartButton)).isDisplayed();
+	}
+
+	public void descriptionText() {
+		clickOnProduct.getText();
+
+	}
+
+	public void verifyText() {
+
+		if(Idriver.getPageSource().contains("OnePlus Nord CE 2 Lite 5G (Blue Tide, 6GB RAM, 128GB Storage)")) {
+			System.out.println("Text is present");
+		}else{
+			System.out.println("Text is not present");	
+
+		}
+
+
 	}
 }
 

@@ -8,6 +8,8 @@ Feature: Amazon product add to cart
     Then Verify the Electronics page URL
     When User Scroll down and click on OnePlus button
     Then User verify the OnePlus page
+    When User Get the Description text displayed
+    Then Verify the text of the product
     When Get description and price for all the product displayed on the page
     And  Click on the product fetched the description
     Then Verify product opened in new tab

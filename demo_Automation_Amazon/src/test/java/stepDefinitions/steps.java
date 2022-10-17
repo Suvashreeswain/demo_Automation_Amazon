@@ -106,13 +106,21 @@ public class steps {
 
 	@Then("^Verify cart button is visible$")
 	public void verify_cart_button_is_visible() throws Throwable {
-		Assert.assertTrue(lp.buttonVisible());;
+		Assert.assertTrue(lp.buttonVisible());
 	}
 	@And("^Close the browser$")
 	public void close_the_browser() throws Throwable {
-		driver.close();
+		driver.quit();
 	}
+    @When("^User Get the Description text displayed$")
+    public void user_get_the_description_text_displayed() throws Throwable {
+        lp.descriptionText();
+    }
 
+    @Then("^Verify the text of the product$")
+    public void verify_the_text_of_the_product() throws Throwable {
+    	lp.verifyText();
+    }
 }
 
 
