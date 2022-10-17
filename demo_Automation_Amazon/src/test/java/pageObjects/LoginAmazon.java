@@ -1,5 +1,6 @@
 package pageObjects;
 
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class LoginAmazon {
 		PageFactory.initElements(rdriver,this);		
 	}
 
-	@FindBy(xpath="//*[@href=\"/electronics/b/?ie=UTF8&node=976419031&ref_=nav_cs_electronics\"]")
+	@FindBy(xpath="//*[@href='/electronics/b/?ie=UTF8&node=976419031&ref_=nav_cs_electronics']")
 	WebElement Eletronics;
 
 	@FindBy(xpath="//*[text()='OnePlus']")
@@ -35,19 +36,19 @@ public class LoginAmazon {
 	@FindBy(xpath="//*[@id='add-to-cart-button']")
 	WebElement ProductDetails;
 
-	@FindBy(xpath="//*[@id=\"add-to-cart-button\"]")
+	@FindBy(xpath="//*[@id='add-to-cart-button']")
 	WebElement addToCart;
 
-	@FindBy(xpath="//span[@id=\"attach-sidesheet-view-cart-button\"]")
+	@FindBy(xpath="//span[@id='attach-sidesheet-view-cart-button']")
 	WebElement addToCartButton;
 
-	@FindBy(xpath="//input[@name=\"proceedToRetailCheckout\"]")
+	@FindBy(xpath="//input[@name='proceedToRetailCheckout']")
 	WebElement ProductAddToCart;
 
-	@FindBy(xpath="//*[@id=\"attach-sidesheet-view-cart-button\"]/span/input")
+	@FindBy(xpath="//*[@id='attach-sidesheet-view-cart-button']/span/input")
 	WebElement cartIcon;
 
-	@FindBy(xpath="//*[@id=\"sc-subtotal-label-activecart\"]")
+	@FindBy(xpath="//*[@id='sc-subtotal-label-activecart']")
 	WebElement productInCart;
 
 	/**
@@ -109,8 +110,8 @@ public class LoginAmazon {
 			for (WebElement priceText : priceList) {
 				System.out.println("Product price list:"+priceText.getText());
 			}
-
-		
+			//FileOutputStream fos=new FileOutputStream("/Users/sabyasachinayak/Desktop/Amazon Report.xlsx");
+			
 
 	}
 
