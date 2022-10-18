@@ -6,9 +6,10 @@ package testRunner;
 	import cucumber.api.junit.Cucumber;
 
 	@RunWith(Cucumber.class)
-	@CucumberOptions(	
-			features = { "Features/Login.Feature.Amazon" },
-			glue ={"stepDefinitions"}
+	@CucumberOptions(features = { "Features/Login.Feature.Amazon" },
+			glue ={"stepDefinitions"},
+			plugin= {"pretty"},
+			monochrome=true
 			
 		
 	)

@@ -1,5 +1,8 @@
 package pageObjects;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +33,7 @@ public class LoginAmazon {
 	@FindBy(xpath="//*[text()='OnePlus']")
 	WebElement onePlus;
 
-	@FindBy(xpath="//*[text()='OnePlus Nord CE 2 Lite 5G (Blue Tide, 6GB RAM, 128GB Storage)']")
+	@FindBy(xpath="//*[text()='OnePlus Nord CE 2 Lite 5G (Black Dusk, 6GB RAM, 128GB Storage)']")
 	WebElement clickOnProduct;
 
 	@FindBy(xpath="//*[@id='add-to-cart-button']")
@@ -99,7 +102,7 @@ public class LoginAmazon {
 			return false;
 	}
 
-	public void allProductList() throws InterruptedException {
+	public void allProductList() throws InterruptedException, FileNotFoundException {
 
 		Thread.sleep(10000);
 		List<WebElement> resultsList =Idriver.findElements(By.xpath("//*[@class=\"a-size-base-plus a-color-base a-text-normal\"]"));
@@ -110,9 +113,8 @@ public class LoginAmazon {
 			for (WebElement priceText : priceList) {
 				System.out.println("Product price list:"+priceText.getText());
 			}
-			//FileOutputStream fos=new FileOutputStream("/Users/sabyasachinayak/Desktop/Amazon Report.xlsx");
 			
-
+					  
 	}
 
 	public void clickOnProduct() {
