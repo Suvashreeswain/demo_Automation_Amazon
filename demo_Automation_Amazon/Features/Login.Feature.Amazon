@@ -18,4 +18,3 @@ Feature: Amazon product add to cart
     When Click on Cart button
     Then Verify that the right product is added in the cart 
     And  Close the browser
-    And Close
