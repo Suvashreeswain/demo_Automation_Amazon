@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.546">
-<testcase classname="Data Tables" name="Bill Amount Generation with list of maps example" time="0.128">
-<system-out><![CDATA[Given I placed an order for the following items one more time...............passed
-When I generate the bill....................................................passed
-Then A bill for $220 should be generated....................................passed
-]]></system-out>
-</testcase>
-</testsuite>
